@@ -338,7 +338,7 @@ func (storage *PublishedStorage) LinkFromPool(publishedDirectory, fileName strin
 			return fmt.Errorf("unable to compare object, MD5 checksum missing")
 		}
 
-		if destinationMD5 == sourceMD5 {
+		if destinationMD5 == sourceMD5 || strings.ToLower(destinationMD5) == sourceMD5 {
 			return nil
 		}
 
